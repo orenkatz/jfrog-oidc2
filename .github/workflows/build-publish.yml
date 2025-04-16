@@ -68,7 +68,7 @@ jobs:
          with:
            time: '11s'
        - name: "JFrog SAST"
-          run: |
+         run: |
             jf audit --sast
       #  - name: Run JFrog SAST
       #    run: |

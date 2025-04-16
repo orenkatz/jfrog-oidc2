@@ -67,6 +67,9 @@ jobs:
          uses: jakejarvis/wait-action@master
          with:
            time: '11s'
+       - name: "JFrog SAST"
+          run: |
+            jf audit --sast
       #  - name: Run JFrog SAST
       #    run: |
       #      jf audit --sca --format=sarif > jfrog_sast.sarif

@@ -21,6 +21,7 @@ jobs:
       # consists of a local npm repository to upload the artifact '' and a remote npm repo " to resolve build dependencies. 
       #The Default Deployment Repository Setting, inside the Virtual Repo is set to Local Repo ''
       PLATFORM_REPO: 'oren-npm'
+      JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      defaults:
       run:
         working-directory: ./package
@@ -69,7 +70,7 @@ jobs:
            time: '11s'
        - name: "JFrog SAST"
          run: |
-            jf audit --sast
+            jf audit --sca --sast --secrets
       #  - name: Run JFrog SAST
       #    run: |
       #      jf audit --sca --format=sarif > jfrog_sast.sarif

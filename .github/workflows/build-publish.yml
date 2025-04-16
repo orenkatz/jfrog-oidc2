@@ -66,7 +66,7 @@ jobs:
        - name: Sleep for 60 seconds
          uses: jakejarvis/wait-action@master
          with:
-           time: '10s'
+           time: '11s'
       #  - name: Run JFrog SAST
       #    run: |
       #      jf audit --sca --format=sarif > jfrog_sast.sarif

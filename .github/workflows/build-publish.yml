@@ -8,7 +8,7 @@ permissions:
   actions: read # For detecting the Github Actions environment.
   id-token: write # for creating OIDC tokens for signing.
   packages: write # for uploading attestations.
-  security-events: write # Required for uploading code scanning
+  security-events: write # Required for uploading code scanni ng
   attestations: write
   contents: read
 jobs:

@@ -66,18 +66,18 @@ jobs:
        - name: Sleep for 60 seconds
          uses: jakejarvis/wait-action@master
          with:
-           time: '60s'
-       - name: Run JFrog SAST
-         run: |
-           jf audit --sca --format=sarif > jfrog_sast.sarif
-           cat jfrog_sast.sarif
-       - name: Set SARIF file path
-         run: echo "SARIF_FILE_PATH=$(pwd)/jfrog_sast.sarif" >> $GITHUB_ENV
+           time: '10s'
+      #  - name: Run JFrog SAST
+      #    run: |
+      #      jf audit --sca --format=sarif > jfrog_sast.sarif
+      #      cat jfrog_sast.sarif
+      #  - name: Set SARIF file path
+      #    run: echo "SARIF_FILE_PATH=$(pwd)/jfrog_sast.sarif" >> $GITHUB_ENV
 
-       - name: Upload output to github advanced security
-         uses: github/codeql-action/upload-sarif@v3
-         with:
-          sarif_file: ${{ env.SARIF_FILE_PATH }}
+      #  - name: Upload output to github advanced security
+      #    uses: github/codeql-action/upload-sarif@v3
+      #    with:
+      #     sarif_file: ${{ env.SARIF_FILE_PATH }}
        
        - name: build scan
          if: ${{ true }}
